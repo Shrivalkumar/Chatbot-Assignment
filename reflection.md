@@ -1,0 +1,10 @@
+# Reflection (300–500 words)
+
+This assignment pushed me to treat prompt writing as an actual product decision, not just “text that goes into the API.” What worked best was designing three fully separate system prompts (one per persona) and enforcing consistent response behavior via output constraints (4–5 sentences and ending with a question). Because the frontend clearly shows the active persona and resets chat on persona switch, the user experience stays deterministic: the learner always knows which coaching style they are getting, and the model is forced to start fresh with the correct system prompt.
+
+Another thing that worked well was keeping the backend minimal and reliable. A single `POST /chat` route selects the correct persona prompt, sends it along with conversation history, and returns only the final answer text. On top of that, I added friendly error handling so the UI doesn’t crash and instead explains that the AI call failed—this makes the app feel “production-like” even though it’s a small project.
+
+The biggest lesson from the GIGO principle was that shallow prompts produce shallow outputs. Early drafts that were basically “be helpful and friendly” led to generic advice that didn’t match interview coaching patterns. After tightening the prompts with persona-specific values, few-shot examples, and explicit constraints on what the persona must never do, the chatbot responses became noticeably more consistent in tone and structure. The few-shot examples mattered because they anchored the model on what “good” looks like (how to structure a plan, how to reason from invariants, and what kinds of next-step questions to ask).
+
+If I were to improve next, I would invest more time into research for each persona: mapping their public teaching themes and wording more precisely into the system prompts. I’d also add a small “prompt quality pass” checklist (persona voice, example coverage, constraints) before deployment. Finally, I would implement optional features like conversation persistence or streaming responses, but the current minimal approach was the fastest way to ship a working, persona-authentic product.
+

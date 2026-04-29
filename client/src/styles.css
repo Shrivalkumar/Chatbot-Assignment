@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Small helper so chat input doesn't feel cramped on mobile. */
+.safe-bottom-pad {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
