@@ -46,4 +46,6 @@ Add screenshots of:
 - Mobile responsive layout
 - Error handling state
 
-# Chatbot-Assignment
+# Chatbot-Assignment screen shot
+<img width="1093" height="663" alt="Screenshot 2026-04-30 at 1 33 56 PM" src="https://github.com/user-attachments/assets/b3090657-100c-40c4-8631-d81e845affde" />
+
